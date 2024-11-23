@@ -1,0 +1,110 @@
+ /* General Styles */
+ body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1{
+    font-family: Arial;
+    color: #87a88f;
+    font-size: 5.6vw;
+    margin-top: 70px;
+    border: black;
+    margin-bottom: 0;
+}
+
+p {
+    font-size: 2.4vw;
+    
+    color: #87a88f;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 50;
+    font-stretch: narrower;
+}
+
+/* Box Container Styling */
+.letter1 .letter-content {
+    background: #424141; /* Dark background for the box */
+    color: #F0F0F0; /* Light gray for regular text (make sure it's readable) */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 90vw; /* Limit width of the box */
+    margin: 20px auto; /* Center the box */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Softer shadow for depth */
+    font-size: 18px; /* Text size */
+    line-height: 1.6; /* Line height for readability */
+    text-align: left; /* Left-align the text */
+    font-family: 'Poppins', sans-serif; /* Font */
+    position: relative; /* So we can position the heart animation inside it */
+    padding-bottom: 60px; /* Adjust this to make more space for the heart animation */
+}
+
+/* Heart Animation at the bottom of the box */
+.letter1 .heart-animation {
+    position: absolute;
+    bottom: 10px; /* 10px from the bottom of the box */
+    left: 47.5%;
+    transform: translateX(-50%); /* Center the heart horizontally */
+    font-size: 5vw; /* Size of the heart */
+    animation: bounce 0.7s infinite alternate; /* Bouncing animation */
+    display: inline-block; /* To ensure it behaves like a normal character */
+    user-select: none; /* Prevents selection of the heart */
+    border: none !important; /* Ensures no border is applied */
+    outline: none !important; /* Ensures no outline is applied */
+    box-shadow: none !important; /* Remove any possible box-shadow */
+}
+
+/* Bouncing Heart Keyframes */
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+body.letter1 .links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: -2vw;
+}
+
+body.letter1 .page-link {
+    display: block;
+    font-size: 2.3vw;
+    margin: 0px 0;
+    padding: 10px 20px;
+    color: #87a88f;
+    background-color: #000000;
+    border-radius: 8px;
+    text-transform: capitalize;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+body.letter1 .page-link:hover {
+    color: #16222c; /* Darker pink on hover */
+    background: #87a88f ;
+    transform: scale(1.1);
+}
+
+.image1 img {
+    position: absolute;
+    left: 10px;
+    margin-top: -12vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image2 img {
+    position: absolute;
+    right:10px;
+    margin-top: -12vw;
+    width: 5vw;
+    height: auto;
+}

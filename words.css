@@ -1,0 +1,209 @@
+ /* General Styles */
+ body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1{
+    font-family: Arial;
+    color: #CBF095;
+    font-size: 5.4vw;
+    margin-top: 70px;
+    border: black;
+    margin-bottom: 0;
+}
+
+p {
+    font-size: 2.4vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #cfe4b2;
+}
+
+/* Container for the columns */
+.word-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows for wrapping content across multiple rows */
+    justify-content: center; /* Aligns the columns to the left */
+    width: 40%; /* Adjust width to make it fit well on the page */
+    padding-left: 30px; /* Add left margin to push columns to the right */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* Column styling */
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 16%; /* Adjusted width to fit 5 columns per row */
+    padding: 10px;
+    background-color: #A7F7FF; /* Light Aqua Blue color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for each column */
+    border-radius: 8px; /* Rounded corners for each column */
+    margin: 10px; /* Space between columns */
+}
+
+/* Styling for the paragraph text in each column */
+.column p {
+    font-size: 25px;
+    color: #00094B; /* Text color */
+    text-align: center;
+    margin-left: 10px;
+}
+
+/* Adjusting column width on larger screens (responsive) */
+@media screen and (max-width: 1200px) {
+    .column {
+        width: 22%; /* Adjust column width for larger tablets */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .column {
+        width: 45%; /* Adjust column width for smaller tablets and large phones */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%; /* Stack columns on small screens like phones */
+        margin: 5px 0; /* Less margin between stacked columns */
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+    .word-container {
+        justify-content: center; /* Center the columns on medium-sized screens */
+        width: 90%; /* Give more space to the container */
+    }
+}
+
+/* Heart icon at the bottom right */
+.heart {
+    font-size: 4vw;  /* Size of the heart icon */
+    color: #FFC0CB;   /* Pink color */
+    position: fixed;  /* Fix it to the bottom-right of the screen */
+    bottom: 0.6vw;
+    right: 0.2vw;
+    text-decoration: none; /* Remove underline */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.heart:hover {
+    color: #f76262;      /* Change color on hover */
+    transform: scale(1.2);  /* Scale the heart when hovered */
+}
+
+.image1 img {
+    position: absolute;
+    left: 10px;
+    margin-top: -12vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image2 img {
+    position: absolute;
+    right:10px;
+    margin-top: -12vw;
+    width: 5vw;
+    height: auto;
+}
+
+
+.image3 img {
+    position: absolute;
+    right: 0;
+    top: 40vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image4 img {
+    position: absolute;
+    left: 0;
+    top: 40vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image5 img {
+    position: absolute;
+    right: 0;
+    top: 72vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image6 img {
+    position: absolute;
+    left: 0;
+    top: 72vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image7 img {
+    position: absolute;
+    left: 0;
+    top: 102vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image8 img {
+    position: absolute;
+    right: 0;
+    top: 102vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image9 img {
+    position: absolute;
+    right: 0;
+    top: 132vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image10 img {
+    position: absolute;
+    left: 0;
+    top: 132vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image11 img {
+    position: absolute;
+    right: 0;
+    top: 162vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image12 img {
+    position: absolute;
+    left: 0;
+    top: 162vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image13 img {
+    position: absolute;
+    left: 0;
+    top: 192vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image14 img {
+    position: absolute;
+    right: 0;
+    top: 192vw;
+    width: 5vw;
+    height: auto;
+}

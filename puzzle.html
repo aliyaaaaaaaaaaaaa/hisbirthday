@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Puzzle Game</title>
+    <link rel="stylesheet" href="puzzle.css">  <!-- Linking CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Game Introduction -->
+    <div id="intro">
+        <h1>GAME</h1>
+        <p>hello, i'll brief you through the simple rules of the game. So you're supposed to arrange the 15 digits in 
+            an order from 1-15 and keep the last space empty. You can do this by clicking on the blocks adjacent to 
+            the empty space and that particular block, as a result, would slide into the space;  or else you could also 
+            slide the clock to the empty space. Its super simple and i hope you like it. Also after you're done then the 
+            heart link would appear bolow and then you can click on it (no cheating okay) have fun mwah.
+        </p>
+        <button id="startButton">Start Game</button>
+    </div>
+
+    <!-- Puzzle Game Area -->
+    <div id="gameArea" style="display:none;">
+        <div id="puzzle" class="puzzle">
+            <div class="tile" id="tile-0">1</div>
+            <div class="tile" id="tile-1">2</div>
+            <div class="tile" id="tile-2">3</div>
+            <div class="tile" id="tile-3">4</div>
+            <div class="tile" id="tile-4">5</div>
+            <div class="tile" id="tile-5">6</div>
+            <div class="tile" id="tile-6">7</div>
+            <div class="tile" id="tile-7">8</div>
+            <div class="tile" id="tile-8">9</div>
+            <div class="tile" id="tile-9">10</div>
+            <div class="tile" id="tile-10">11</div>
+            <div class="tile" id="tile-11">12</div>
+            <div class="tile" id="tile-12">13</div>
+            <div class="tile" id="tile-13">14</div>
+            <div class="tile" id="tile-14">15</div>
+            <div class="tile empty" id="tile-15"></div> <!-- Empty tile -->
+        </div>
+        <div id="gameStatus">
+            <p id="message"></p>
+            <button id="resetButton" style="display:none;">Restart Game</button>
+        </div>
+    </div>
+
+    <!-- Heart Link (Initially hidden) -->
+    <a href="ghosting.html" class="heart3" id="heartLink" style="display:none;">
+        <i class="fas fa-heart"></i> <!-- Heart icon -->
+    </a>
+
+    <script src="puzzle.js"></script>
+</body>
+</html>

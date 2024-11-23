@@ -1,0 +1,8 @@
+* Specific styling for the heading on this page */
+.special-heading {
+    font-size: 36px;
+    color: #a7e9a7; /* Light green color for the heading */
+    margin-top: 20px;
+    text-align: center; /* Center-align the heading */
+}
+

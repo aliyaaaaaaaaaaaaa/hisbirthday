@@ -1,0 +1,236 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1, h2, h3, p {
+    color: #CFB095;
+    opacity: 0; /* Initially hide the elements */
+    animation: fadeIn 1s forwards; /* Apply fade-in animation */
+}
+
+/* Animation for Fade-In Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Start slightly above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Delay animations for each element */
+h1 {
+    font-family: Trattatello, fantasy;
+    font-size: 9vw;
+    margin-top: 70px;
+    margin-bottom: 0;
+    animation-delay: 0s; /* First to appear */
+}
+
+h2 {
+    font-family: Arial;
+    font-size: 5vw;
+    margin-top: 0%;
+    margin-bottom: 0;
+    animation-delay: 1s; /* 1 second after h1 */
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4vw;
+    margin-bottom: 0;
+    margin-top: 0;
+    animation-delay: 2s; /* 1 second after h2 */
+}
+
+p {
+    font-size: 2vw;
+    animation-delay: 3s; /* 1 second after h3 */
+}
+
+/* Cake and Candle Styling  */
+.cake {
+    position: absolute;
+    width: 245px;
+    height: calc(8vw+7.8vw+7.6vw);
+    bottom: 10vw;
+    margin-left: 34vw;
+    border-radius: 10px;
+}
+
+/* Cake Layers */
+.layer {
+    height: 0;
+    margin-bottom: 0;
+    border-radius: 5px;
+    position: absolute;
+    opacity: 1;
+    transform: scaleY(1);
+    animation: growLayer 1s ease-out forwards;
+}
+
+@keyframes growLayer {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+ }
+
+/* Layer 1 (bottom layer, darkest green) */
+.layer-1 {
+    background: linear-gradient(145deg, #2f6a32, #1d5226);
+    bottom: -10vw;
+    width: 30vw;
+    height: 8vw;
+    left: 2%;
+    z-index: 1;
+    transform: translateX(-45%);
+}
+
+/* Layer 2 (middle layer, medium green) */
+.layer-2 {
+    background: linear-gradient(145deg, #66a34d, #4d8537);
+    bottom: -2vw;
+    width: 25vw;
+    height: 7.8vw;
+    z-index: 2;
+    left: 15%;
+    transform: translateX(-45%);
+}
+
+/* Layer 3 (top layer, lightest green) */
+.layer-3 {
+    background: linear-gradient(145deg, #a8d08d, #7fba68);
+    bottom: 5.8vw;
+    width: 20vw;
+    height: 7.6vw;
+    z-index: 3;
+    left: 26%;
+    transform: translateX(-45%);
+}
+
+/* Adjust the initial top position of the candle */
+.candle {
+    position: relative;
+    bottom: 13.4vw;  /* Move the candle higher */
+    left: 66%;  
+    transform: translateX(-45%);
+    width: 20px;  
+    height: 6vw;  
+    background-color: pink;
+    border-radius: 5px;
+    z-index: 10;  
+    animation: fadeInAndDrop 3s ease-in-out forwards;  /* Combined animation */
+}
+
+/* Keyframes for both fading in and dropping */
+@keyframes fadeInAndDrop {
+    0% {
+        top: -160px;   /* Starting position off-screen */
+        opacity: 0;    /* Initially invisible */
+    }
+    50% {
+        opacity: 1;    /* Fully visible halfway through */
+    }
+    100% {
+        bottom: 13.4vw;   /* Final position near the cake */
+        opacity: 1;    /* Ensure it's fully visible at the end */
+    }
+}
+
+/* Flame Styling */
+.flame {
+    position: absolute;
+    top: -15px;
+    left: 25%;
+    transform: translateX(-45%);
+    width: 10px;
+    height: 15px;
+    background-color: #FF6347;
+    border-radius: 45%;
+    animation: flameFlicker 0.4s infinite alternate;
+}
+
+@keyframes flameFlicker {
+    0% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Heart Link Animation */
+.heart1 {
+    font-size: 4vw;
+    color: #FFC0CB;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.heart1:hover {
+    color: #f76262;
+    transform: scale(1.2);
+}
+
+.image1 img {
+    position: absolute;
+    left: 10px;
+    margin-top: 0.3vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image2 img {
+    position: absolute;
+    right:10px;
+    margin-top: 0.3vw;
+    width: 5vw;
+    height: auto;
+}
+
+
+.image3 img {
+    position: absolute;
+    right: 20%;
+    top: 45%;
+    width: 5vw;
+    height: auto;
+}
+
+.image4 img {
+    position: absolute;
+    left: 20%;
+    top: 45%;
+    width: 5vw;
+    height: auto;
+}
+
+.image5 img {
+    position: absolute;
+    right: 10px;
+    bottom: 1vw;
+    width: 5vw;
+    height: auto;
+}
+
+.image6 img {
+    position: absolute;
+    left: 10px;
+    bottom: 1vw;
+    width: 5vw;
+    height: auto;
+}

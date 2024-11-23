@@ -1,0 +1,157 @@
+ /* General Styles */
+ body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1{
+    font-family: Arial;
+    color: #87a88f;
+    font-size: 5.6vw;
+    margin-top: 70px;
+    border: black;
+    margin-bottom: 0;
+}
+
+p {
+    font-size: 2.4vw;
+    
+    color: #87a88f;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 50;
+    font-stretch: narrower;
+}
+
+
+button {
+    background-color: #93cdee;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #7a97f5;
+}
+
+/* Puzzle grid */
+.puzzle {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 450px;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: #9efda3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #222222;  /* Ensuring numbers are visible */
+}
+
+.tile.empty {
+    background-color: #222222; /* Empty tile */
+}
+
+.tile:hover {
+    background-color: #598559;
+}
+
+/* Game status display */
+#gameStatus {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Intro page */
+#intro {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Heart Link Styling */
+.heart3 {
+    font-size: 4vw;  /* Size of the heart icon */
+    color: #FFC0CB;   /* Pink color */
+    position: fixed;  /* Fix it to the bottom-right of the screen */
+    bottom: 0px;
+    right: 30px;
+    text-decoration: none; /* Remove underline */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.heart3:hover {
+    color: #f76262;      /* Change color on hover */
+    transform: scale(1.2);  /* Scale the heart when hovered */
+}
+
+/* Mobile and Tablet responsive adjustments */
+@media (max-width: 768px) {
+    /* Adjust puzzle grid for smaller screens */
+    .puzzle {
+        grid-template-columns: repeat(4, 70px); /* Reduce tile size for smaller screens */
+        grid-template-rows: repeat(4, 70px); /* Adjust height as well */
+    }
+
+    .tile {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5em; /* Make numbers more readable on smaller screens */
+    }
+
+    /* Increase button size on smaller devices */
+    button {
+        padding: 15px 30px;
+        font-size: 1.5em;
+    }
+
+    /* Increase heart icon size on smaller screens */
+    .heart3 {
+        font-size: 35px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    /* Ensure intro text is legible on mobile */
+    #intro p {
+        font-size: 18px; /* Smaller text for mobile */
+    }
+}
+
+/* Larger tablets and small laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .puzzle {
+        grid-template-columns: repeat(4, 90px); /* Adjust for mid-size devices */
+        grid-template-rows: repeat(4, 90px);
+    }
+
+    .tile {
+        width: 90px;
+        height: 90px;
+        font-size: 1.8em; /* Slightly larger font size */
+    }
+
+    .heart3 {
+        font-size: 40px; /* Ensure the heart icon remains legible */
+    }
+
+    button {
+        padding: 12px 25px; /* Slightly larger buttons */
+        font-size: 1.4em;
+    }
+}
