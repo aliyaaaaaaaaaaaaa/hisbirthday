@@ -6,15 +6,12 @@ const tiles = Array.from(puzzle.getElementsByClassName("tile"));
 const gameArea = document.getElementById("gameArea");
 const intro = document.getElementById("intro");
 const message = document.getElementById("message");
-let emptyIndex = 15; // The empty space index (start at the last tile)
+let emptyIndex = 8; // The empty space index (start at the last tile)
 
-// Variables for touch gestures
+// Swipe gesture variables
 let touchStartX = 0;
 let touchStartY = 0;
-let touchEndX = 0;
-let touchEndY = 0;
 
-// Event listeners for Start and Reset buttons
 startButton.addEventListener("click", startGame);
 resetButton.addEventListener("click", resetGame);
 
@@ -45,22 +42,22 @@ function resetGame() {
 
 // Function to shuffle the puzzle tiles
 function shufflePuzzle() {
-    let shuffledTiles = Array.from({ length: 16 }, (_, i) => i);
-    
+    let shuffledTiles = Array.from({ length: 9 }, (_, i) => i);
+
     // Randomly shuffle tiles using Fisher-Yates shuffle algorithm
-    for (let i = 15; i > 0; i--) {
+    for (let i = 8; i > 0; i--) {
         const randomIndex = Math.floor(Math.random() * (i + 1));
         [shuffledTiles[i], shuffledTiles[randomIndex]] = [shuffledTiles[randomIndex], shuffledTiles[i]];
     }
 
     // Apply shuffled values to tiles
     shuffledTiles.forEach((index, i) => {
-        tiles[i].innerText = index === 15 ? "" : (index + 1).toString(); // Make last tile empty
-        tiles[i].classList.toggle("empty", index === 15); // Apply empty class for the empty tile
+        tiles[i].innerText = index === 8 ? "" : (index + 1).toString(); // Make last tile empty
+        tiles[i].classList.toggle("empty", index === 8); // Apply empty class for the empty tile
     });
 
     // Update the empty index
-    emptyIndex = shuffledTiles.indexOf(15);
+    emptyIndex = shuffledTiles.indexOf(8);
 
     // Log the empty index to ensure it's correctly set
     console.log("Empty index after shuffle:", emptyIndex);
@@ -104,17 +101,11 @@ function moveTile(tileIndex) {
         if (isSolved()) {
             setTimeout(() => {
                 message.textContent = "You Win!";
+                message.style.display = "block"; // Make the win message visible
                 resetButton.style.display = "block";
                 heartLink.style.display = "block"; // Show heart link after winning
             }, 200);
         }
-
-        // Reattach click listeners after the move
-        tiles.forEach((tile, index) => {
-            if (tile.classList.contains("empty")) return; // Skip the empty tile
-            tile.removeEventListener("click", tileClickListener); // Remove old listener if any
-            tile.addEventListener("click", tileClickListener(index)); // Add new listener
-        });
     } else {
         console.log(`Tile at index ${tileIndex} is not adjacent to empty space.`);
     }
@@ -122,10 +113,10 @@ function moveTile(tileIndex) {
 
 // Check if a tile is adjacent to the empty space
 function isAdjacentToEmpty(index) {
-    const rowIndex = Math.floor(index / 4);
-    const colIndex = index % 4;
-    const emptyRowIndex = Math.floor(emptyIndex / 4);
-    const emptyColIndex = emptyIndex % 4;
+    const rowIndex = Math.floor(index / 3);
+    const colIndex = index % 3;
+    const emptyRowIndex = Math.floor(emptyIndex / 3);
+    const emptyColIndex = emptyIndex % 3;
 
     // Check if the tile is adjacent to the empty space (in the same row or column)
     if (Math.abs(rowIndex - emptyRowIndex) + Math.abs(colIndex - emptyColIndex) === 1) {
@@ -135,18 +126,18 @@ function isAdjacentToEmpty(index) {
     return false;
 }
 
-// Check if the puzzle is solved (tiles in order 1-15, last one empty)
+// Check if the puzzle is solved (tiles in order 1-8, last one empty)
 function isSolved() {
     return tiles.every((tile, index) => {
-        if (index === 15) return tile.innerText === ""; // The last spot should be empty
-        return tile.innerText === (index + 1).toString(); // Tiles should be in order from 1 to 15
+        if (index === 8) return tile.innerText === ""; // The last spot should be empty
+        return tile.innerText === (index + 1).toString(); // Tiles should be in order from 1 to 8
     });
 }
 
 // Function to solve the puzzle (for cheat code)
 function solvePuzzle() {
     tiles.forEach((tile, index) => {
-        if (index !== 15) {
+        if (index !== 8) {
             tile.innerText = (index + 1).toString(); // Set tiles to be in order
             tile.classList.remove("empty");
         } else {
@@ -155,7 +146,7 @@ function solvePuzzle() {
         }
     });
 
-    emptyIndex = 15; // Reset the empty tile index
+    emptyIndex = 8; // Reset the empty tile index
     message.textContent = "You Win!";
     resetButton.style.display = "block";
     heartLink.style.display = "block"; // Show heart link after cheat code
@@ -206,7 +197,7 @@ function handleTouchEnd(event) {
 // Function to move the tile right
 function moveTileRight() {
     const targetIndex = emptyIndex - 1;
-    if (emptyIndex % 4 !== 0 && isAdjacentToEmpty(targetIndex)) {
+    if (emptyIndex % 3 !== 0 && isAdjacentToEmpty(targetIndex)) {
         moveTile(targetIndex);
     }
 }
@@ -214,23 +205,23 @@ function moveTileRight() {
 // Function to move the tile left
 function moveTileLeft() {
     const targetIndex = emptyIndex + 1;
-    if (emptyIndex % 4 !== 3 && isAdjacentToEmpty(targetIndex)) {
+    if (emptyIndex % 3 !== 2 && isAdjacentToEmpty(targetIndex)) {
         moveTile(targetIndex);
     }
 }
 
 // Function to move the tile up
 function moveTileUp() {
-    const targetIndex = emptyIndex + 4;
-    if (emptyIndex < 12 && isAdjacentToEmpty(targetIndex)) {
+    const targetIndex = emptyIndex + 3;
+    if (emptyIndex < 6 && isAdjacentToEmpty(targetIndex)) {
         moveTile(targetIndex);
     }
 }
 
 // Function to move the tile down
 function moveTileDown() {
-    const targetIndex = emptyIndex - 4;
-    if (emptyIndex >= 4 && isAdjacentToEmpty(targetIndex)) {
+    const targetIndex = emptyIndex - 3;
+    if (emptyIndex >= 3 && isAdjacentToEmpty(targetIndex)) {
         moveTile(targetIndex);
     }
 }

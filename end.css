@@ -1,0 +1,48 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.head{
+    font-family: Arial;
+    color: #3e617e;
+    font-size: 2.5vw;
+    margin-top: 70px;
+    border: black;
+    margin-bottom: 0;
+}
+
+.content{
+    font-family: Arial;
+    color: #6b718d;
+    font-size: 2.5vw;
+    margin-top: 70px;
+    border: black;
+    margin-bottom: 0;
+}
+
+p {
+    font-size: 3vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #ffa8d1;
+}
+
+/* Set up body to occupy full height */
+ body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Ensures content is not right at the edges */
+}
+
+.cat img {
+    position: absolute;
+    right: 35vw;
+    width: 30vw;
+    height: auto;
+}

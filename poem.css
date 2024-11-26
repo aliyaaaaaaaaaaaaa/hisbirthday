@@ -20,7 +20,7 @@ header h1 {
 /* Poem Content */
 .poem-content {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 60px auto;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
@@ -28,12 +28,12 @@ header h1 {
 
 /* Styling for Each Stanza */
 .stanza {
-    margin-bottom: 40px; /* Extra space between stanzas */
+    margin-bottom: 60px; /* Extra space between stanzas */
 }
 
 /* Styling for Each Paragraph (Sentence) within a Stanza */
 .stanza p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1; /* Reduced line spacing within each stanza */
     margin-bottom: 4px; /* Reduced space between lines within the stanza */
     color: #f2f2f2;
@@ -63,4 +63,20 @@ header h1 {
     border-top: 3px solid #f2a7f7; /* Create a solid top border */
     margin: 40px auto;        /* Add space before and after the line */
     width: 100%;               /* Set width to 80% of the container */
+}
+
+/* Heart icon at the bottom right */
+.heart {
+    font-size: 6vw;  /* Size of the heart icon */
+    color: #FFC0CB;   /* Pink color */
+    position: absolute;  /* Fix it to the bottom-right of the screen */
+    bottom: -126vw;
+    right: 46vw;
+    text-decoration: none; /* Remove underline */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.heart:hover {
+    color: #f76262;      /* Change color on hover */
+    transform: scale(1.2);  /* Scale the heart when hovered */
 }
