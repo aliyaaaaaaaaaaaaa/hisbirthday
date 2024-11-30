@@ -21,7 +21,7 @@ document.addEventListener("keydown", function (event) {
         solvePuzzle(); // Call the function to solve the puzzle
         message.textContent = "You Win! (Cheat Code)";
         resetButton.style.display = "block";
-        heartLink.style.display = "block"; // Show heart link after cheat code
+        // Heart link remains visible even after cheat code
     }
 });
 
@@ -29,6 +29,7 @@ document.addEventListener("keydown", function (event) {
 function startGame() {
     intro.style.display = "none";
     gameArea.style.display = "block";
+    heartLink.style.display = "block";
     shufflePuzzle(); // Start the game by shuffling the tiles
 }
 
@@ -37,7 +38,8 @@ function resetGame() {
     shufflePuzzle();
     message.textContent = "";
     resetButton.style.display = "none";
-    heartLink.style.display = "none"; // Hide the heart link after reset
+    heartLink.style.display = "block";
+    // Heart link remains visible, no change in its visibility
 }
 
 // Function to shuffle the puzzle tiles
@@ -103,7 +105,7 @@ function moveTile(tileIndex) {
                 message.textContent = "You Win!";
                 message.style.display = "block"; // Make the win message visible
                 resetButton.style.display = "block";
-                heartLink.style.display = "block"; // Show heart link after winning
+                // Heart link stays visible after winning
             }, 200);
         }
     } else {
@@ -149,7 +151,7 @@ function solvePuzzle() {
     emptyIndex = 8; // Reset the empty tile index
     message.textContent = "You Win!";
     resetButton.style.display = "block";
-    heartLink.style.display = "block"; // Show heart link after cheat code
+    // Heart link remains visible after cheat code is triggered
 }
 
 // Touch event listeners for swipe movements (for iPad and other touch devices)

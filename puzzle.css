@@ -153,3 +153,7 @@ button:hover {
         font-size: 1.4em;
     }
 }
+
+#heartLink {
+    display: block;  /* Always display the heart link */
+}
